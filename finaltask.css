@@ -8,32 +8,27 @@
   background-color: #fdd800;
   padding: 10px 20px;
 }
- 
 .head-icons {
   display: flex;
   justify-content: flex-end;
   gap: 20px;
 }
- 
 .head-icons a {
   text-decoration: none;
   font-size: 15px;
   color: #000;
   font-weight: 600;
 }
- 
 .image-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-}
- 
+} 
 .image-section > img {
   width: 180px;
   margin: 20px 50px;
 }
- 
 .back-img {
   position: relative;
   width: 100%;
@@ -43,8 +38,7 @@
   padding: 80px 50px;
   min-height: 800px;
   overflow: hidden;
-}
- 
+} 
 .banner-img {
   position: absolute;
   top: 0;
@@ -53,13 +47,11 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-}
- 
+} 
 .text {
   max-width: 500px;
   z-index: 1;
-}
- 
+} 
 .text h1 {
   font-size: clamp(24px, 3.5vw, 40px);
   color: #5f259f;
@@ -67,7 +59,6 @@
   line-height: 1.4;
   margin-bottom: 20px;
 }
- 
 .btn-yellow {
   background-color: #fdd800;
   color: #000;
@@ -359,27 +350,28 @@
 }
 .contact-container {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     gap: 40px;
     max-width: 1800px;
     margin: auto;
 }
 .contact-container img {
-  width: 50%;
+    width: 50%;
+    height: 90vh;
 }
 .form-box {
     background: #fff;
     padding: 30px;
-    padding-right: 200px;
     border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.6);
+    margin-bottom: 40px;
 }
 
 .form-box input,
 .form-box select,
 .form-box textarea {
-    width: 100%;
+    width: 70%;
     padding: 12px 15px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -412,7 +404,13 @@
 input::placeholder{
     color: #000;
 }
-@media screen and (max-width: 768px){
+input:focus{
+    border: 1px solid #000;
+}
+.admission-image{
+    opacity: 0.4;
+}
+@media screen and (max-width: 768px) {
     * {
         max-width: 100%;
         margin: 0;
@@ -422,21 +420,24 @@ input::placeholder{
     .head-icons a {
         display: none;
     }
+    .image-section>img {
+        margin-left: 100px;
+    }
     .back-img {
         flex-direction: column;
         align-items: flex-start;
+        position: relative;
         background-image: url(images/top-banner-mobile.png);
+        background-size: 400px;
         background-repeat: no-repeat;
         background-position: bottom;
-        background-size: contain;
     }
-    .banner-img {
+    .banner-img{
         display: none;
     }
     .text {
         max-width: 100%;
-        text-align: center;
-        top: 0px;
+        position: absolute;
     }
     .text h1 {
         font-size: 24px;
@@ -450,6 +451,7 @@ input::placeholder{
     }
     .contact-container img {
         width: 100%;
+        height: auto;
     }
     .form-box {
         padding: 20px;
@@ -461,10 +463,16 @@ input::placeholder{
     .step {
         display: block;
     }
-    .step img {
+    .step img,.form-box input,.form-box select,.form-box textarea  {
         width: 100%;
     }
-    .third-section h3 , .admission-section p {
+    .third-section h3 , .admission-section p ,.testimonial-text {
         padding: 0px;
+    }
+    .admission-section h2 , .contact-section h2 ,.third-section h2 {
+        font-size: 38px;
+    }
+    .admission-image{
+        opacity: 1;
     }
 }
